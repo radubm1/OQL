@@ -7,7 +7,8 @@ import java.util.Map;
 
 
 public class MyList<T> extends ArrayList<T> {
-	static int[] n; //coloanele de afisat
+	///coloanele de afisat
+	static int[] n; 
 	public MyList() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -35,8 +36,8 @@ public class MyList<T> extends ArrayList<T> {
 	public <T> List<Integer> findIf(T t)
 	{
 		List<Integer> index=new ArrayList<Integer>(); //acolo unde vrem sa pozitionam indexul
-
-		for(int i=0; i<this.size() ;i++)//parcurgem toate sub-colectiile sa cautam cuv.
+		///parcurgem toate sub-colectiile sa cautam cuv.
+		for(int i=0; i<this.size() ;i++)
 		{
 			//System.out.println(this.get(i));
 			List<T> tmp = (List<T>) this.get(i);
@@ -55,14 +56,14 @@ public class MyList<T> extends ArrayList<T> {
 	}
 	
 	public <T> List<T> Where(T t)
-	{
-		List<T> arr = new ArrayList<T>();//ce intoarce Where()
-		
-		for(int i=0; i<n.length ;i++)//parcurgem numai sub-colectiile(coloane) precizate in select ca sa adaugam elemente
+	{	///ce intoarce Where()
+		List<T> arr = new ArrayList<T>();
+		///parcurgem numai sub-colectiile(coloane) precizate in select ca sa adaugam elemente
+		for(int i=0; i<n.length ;i++)
 		{
 			List<T> tmp = (List<T>) this.get(n[i]);
 			for (Integer id : findIf(t))
-				arr.add(tmp.get(id));//adauga din fiecare lista elementul de pe randul corespunzator
+				arr.add(tmp.get(id));///<adauga din fiecare lista elementul de pe randul corespunzator
 		}
 		return arr;
 		
