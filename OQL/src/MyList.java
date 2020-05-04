@@ -108,3 +108,4 @@ public class MyList<T> extends ArrayList<T> {
 		return sum;
 	}
 }
+

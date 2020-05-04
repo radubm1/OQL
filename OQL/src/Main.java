@@ -26,7 +26,6 @@ public class Main {
 		|vasi|chim|  7 |
 		-----------------*/
 		
-		
 		System.out.print(catalog.Select("0,1,2").Group(2,0));
 		
 
