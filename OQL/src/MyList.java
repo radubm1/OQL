@@ -29,8 +29,8 @@ public class MyList<T> extends ArrayList<T> {
 		this.n = parseToInts(cols);
 		
 		MyList<T> arr=new MyList<T>();
-		for(int i=0; i<this.size();i++)
-			arr.add(this.get(i));
+		for(int i=0; i<n.length;i++)
+			arr.add(this.get(n[i]));
 
 		return (MyList<T>) arr;
 	}
@@ -61,9 +61,9 @@ public class MyList<T> extends ArrayList<T> {
 	{	///ce intoarce Where()
 		MyList<T> myarr=new MyList<T>();
 		///parcurgem numai sub-colectiile(coloane) precizate in select ca sa adaugam elemente
-		for(int i=0; i<n.length ;i++)
+		for(int i=0; i<this.size();i++)
 		{
-			List<T> tmp = (List<T>) this.get(n[i]);
+			List<T> tmp = (List<T>) this.get(i);
 			List<T> arr = new ArrayList<T>();
 			for (Integer id : findIf(t))
 				arr.add(tmp.get(id));///<adauga din fiecare lista elementul de pe randul corespunzator
@@ -72,8 +72,9 @@ public class MyList<T> extends ArrayList<T> {
 		return myarr;
 	}
 	
-	public <T> List<T> Group(int col1, int col2)
+	public <T> MyList<T> Group(int col1, int col2)
 	{
+		n=new int[]{col1,col2};
 		MyList<T> arr=new MyList<T>();
 		List<Double> dbl = new ArrayList<Double>();
 		List<T> grp = (List<T>) this.get(col2);
@@ -83,9 +84,9 @@ public class MyList<T> extends ArrayList<T> {
 		while(it.hasNext())
 		{
 			dbl.add(Sum(it.next(),col1));
-			
+			p++;
 		}
-		arr.add((T) unique);
+		arr.add((T) new ArrayList<T>(unique));//pt Having...
 		arr.add((T) dbl);
 			
 		
