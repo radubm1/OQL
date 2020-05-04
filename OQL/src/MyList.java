@@ -59,15 +59,17 @@ public class MyList<T> extends ArrayList<T> {
 	
 	public <T> MyList<T> Where(T t)
 	{	///ce intoarce Where()
-		MyList<T> arr = new MyList<T>();
+		MyList<T> myarr=new MyList<T>();
 		///parcurgem numai sub-colectiile(coloane) precizate in select ca sa adaugam elemente
 		for(int i=0; i<n.length ;i++)
 		{
 			List<T> tmp = (List<T>) this.get(n[i]);
+			List<T> arr = new ArrayList<T>();
 			for (Integer id : findIf(t))
 				arr.add(tmp.get(id));///<adauga din fiecare lista elementul de pe randul corespunzator
+			myarr.add((T) arr);
 		}
-		return arr;
+		return myarr;
 	}
 	
 	public <T> List<T> Group(int col1, int col2)

@@ -26,7 +26,7 @@ public class Main {
 		|vasi|chim|  7 |
 		-----------------*/
 		
-		System.out.print(catalog.Select("0,1,2").Group(2,0));
+		System.out.print(catalog.Select("0,1,2").Where("radu").Group(2,0));
 		
 
 	}
