@@ -105,7 +105,6 @@ public class MyList<T> extends ArrayList<T> {
 			p++;
 			
 		}
-
 		return sum;
 	}
 }
