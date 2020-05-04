@@ -74,17 +74,16 @@ public class MyList<T> extends ArrayList<T> {
 	
 	public <T> MyList<T> Group(int col1, int col2)
 	{
-		n=new int[]{col1,col2};
+
 		MyList<T> arr=new MyList<T>();
 		List<Double> dbl = new ArrayList<Double>();
 		List<T> grp = (List<T>) this.get(col2);
 		Set<T> unique = new HashSet<T>(grp);
 		Iterator<T> it = unique.iterator();//pentru fiecare sub-lista
-		int p=0;
+
 		while(it.hasNext())
 		{
 			dbl.add(Sum(it.next(),col1));
-			p++;
 		}
 		arr.add((T) new ArrayList<T>(unique));//pt Having...
 		arr.add((T) dbl);
