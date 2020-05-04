@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 
 public class MyList<T> extends ArrayList<T> {
@@ -55,9 +57,9 @@ public class MyList<T> extends ArrayList<T> {
 		return index;	
 	}
 	
-	public <T> List<T> Where(T t)
+	public <T> MyList<T> Where(T t)
 	{	///ce intoarce Where()
-		List<T> arr = new ArrayList<T>();
+		MyList<T> arr = new MyList<T>();
 		///parcurgem numai sub-colectiile(coloane) precizate in select ca sa adaugam elemente
 		for(int i=0; i<n.length ;i++)
 		{
@@ -66,6 +68,44 @@ public class MyList<T> extends ArrayList<T> {
 				arr.add(tmp.get(id));///<adauga din fiecare lista elementul de pe randul corespunzator
 		}
 		return arr;
+	}
+	
+	public <T> List<T> Group(int col1, int col2)
+	{
+		MyList<T> arr=new MyList<T>();
+		List<Double> dbl = new ArrayList<Double>();
+		List<T> grp = (List<T>) this.get(col2);
+		Set<T> unique = new HashSet<T>(grp);
+		Iterator<T> it = unique.iterator();//pentru fiecare sub-lista
+		int p=0;
+		while(it.hasNext())
+		{
+			dbl.add(Sum(it.next(),col1));
+			
+		}
+		arr.add((T) unique);
+		arr.add((T) dbl);
+			
 		
+		return arr;
+		
+	}
+	public <T> double Sum(T t, int col)
+	{
+		List<T> agr = (List<T>) this.get(col);
+		Iterator<T> it = agr.iterator();//pentru fiecare sub-lista
+		int p=0;
+		int sum=0;
+		while(it.hasNext())
+		{
+			T tp = it.next();
+			for(int i : findIf(t))
+				if (p==i)
+					sum+=Double.valueOf(tp.toString());
+			p++;
+			
+		}
+
+		return sum;
 	}
 }
