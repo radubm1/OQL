@@ -1,49 +1,56 @@
-OQL
+Hierarchical Index
+==================
 
-AUTHOR RADU M
+Class Hierarchy
+---------------
 
-Version
+This inheritance list is sorted roughly, but not completely,
+alphabetically:
 
-Mon May 4 2020
+Main pagenum
 
-Table of Contents
+ArrayList
 
-MyList
-
-All Classes
+MyList\< T \> pagenum
 
 Class Index
+===========
 
 Class List
+----------
 
 Here are the classes, structs, unions and interfaces with brief
 descriptions:
 
-Main pagenum
+**Main** pagenum
 
-MyList\< T \> pagenum
+**MyList\< T \>** pagenum
 
 File Index
+==========
 
 File List
+---------
 
 Here is a list of all files with brief descriptions:
 
-C:/Users/radub/git/oql/OQL/src/Main.java pagenum
+**C:/Users/radub/git/oql/OQL/src/Main.java** pagenum
 
-C:/Users/radub/git/oql/OQL/src/MyList.java pagenum
+**C:/Users/radub/git/oql/OQL/src/MyList.java** pagenum
 
 Class Documentation
+===================
 
 Main Class Reference
+--------------------
 
-Static Public Member Functions
+### Static Public Member Functions
 
-static void main (String\[\] args)
+static void **main** (String\[\] args)
 
-Member Function Documentation
+### Member Function Documentation
 
-static void Main.main (String\[\] args)\[static\]
+#### static void Main.main (String\[\] *args*)\[static\]
 
 6 {
 
@@ -104,41 +111,44 @@ materii.add(\"info\");materii.add(\"mate\");materii.add(\"chim\");materii.add(\"
 
 References MyList\< T \>.Select().
 
-The documentation for this class was generated from the following file:
+#### The documentation for this class was generated from the following file:
 
-C:/Users/radub/git/oql/OQL/src/Main.java
+C:/Users/radub/git/oql/OQL/src/**Main.java**
+
+#### 
 
 MyList\< T \> Class Template Reference
+--------------------------------------
 
 Inheritance diagram for MyList\< T \>:
 
-Public Member Functions
+### Public Member Functions
 
-MyList ()
+**MyList** ()
 
-int\[\] parseToInts (String no)
+int\[\] **parseToInts** (String no)
 
-MyList\< T \> Select (String cols)
+**MyList**\< T \> **Select** (String cols)
 
-Package Functions
+### Package Functions
 
-public\< T \> List\< Integer \> findIf (T t)
+public\< T \> List\< Integer \> **findIf** (T t)
 
-public\< T \> MyList\< T \> Where (T t)
+public\< T \> **MyList**\< T \> **Where** (T t)
 
-public\< T \> MyList\< T \> Group (int col1, int col2)
+public\< T \> **MyList**\< T \> **Group** (int col1, int col2)
 
-public\< T \> double Sum (T t, int col)
+public\< T \> double **Sum** (T t, int col)
 
-Static Package Attributes
+### Static Package Attributes
 
-static int\[\] n
+static int\[\] **n**
 
-coloanele de afisat
+*coloanele de afisat*
 
-Constructor & Destructor Documentation
+### Constructor & Destructor Documentation
 
-MyList\< T \>.MyList ()
+#### MyList\< T \>.MyList ()
 
 14 {
 
@@ -148,11 +158,11 @@ MyList\< T \>.MyList ()
 
 17 }
 
-Member Function Documentation
+### Member Function Documentation
 
-public\<T\> List\<Integer\> MyList\< T \>.findIf (T t)\[package\]
+#### public\<T\> List\<Integer\> MyList\< T \>.findIf (T *t*)\[package\]
 
-parcurgem toate sub-colectiile sa cautam cuv.
+> parcurgem toate sub-colectiile sa cautam cuv.
 
 39 {
 
@@ -197,8 +207,7 @@ sa pozitionam indexul
 
 Referenced by MyList\< T \>.Sum(), and MyList\< T \>.Where().
 
-public\<T\> MyList\<T\> MyList\< T \>.Group (int col1, int
-col2)\[package\]
+#### public\<T\> MyList\<T\> MyList\< T \>.Group (int *col1*, int *col2*)\[package\]
 
 76 {
 
@@ -240,7 +249,7 @@ col2)\[package\]
 
 References MyList\< T \>.Sum().
 
-int \[\] MyList\< T \>.parseToInts (String no)
+#### int \[\] MyList\< T \>.parseToInts (String *no*)
 
 19 {
 
@@ -262,7 +271,7 @@ References MyList\< T \>.n.
 
 Referenced by MyList\< T \>.Select().
 
-MyList\<T\> MyList\< T \>.Select (String cols)
+#### MyList\<T\> MyList\< T \>.Select (String *cols*)
 
 28 {
 
@@ -286,7 +295,7 @@ References MyList\< T \>.n, and MyList\< T \>.parseToInts().
 
 Referenced by Main.main().
 
-public\<T\> double MyList\< T \>.Sum (T t, int col)\[package\]
+#### public\<T\> double MyList\< T \>.Sum (T *t*, int *col*)\[package\]
 
 96 {
 
@@ -324,14 +333,14 @@ References MyList\< T \>.findIf().
 
 Referenced by MyList\< T \>.Group().
 
-public\<T\> MyList\<T\> MyList\< T \>.Where (T t)\[package\]
+#### public\<T\> MyList\<T\> MyList\< T \>.Where (T *t*)\[package\]
 
-ce intoarce Where()
-
-parcurgem numai sub-colectiile(coloane) precizate in select ca sa
-adaugam elemente
-
-\<adauga din fiecare lista elementul de pe randul corespunzator
+> ce intoarce **Where()**
+>
+> parcurgem numai sub-colectiile(coloane) precizate in select ca sa
+> adaugam elemente
+>
+> \<adauga din fiecare lista elementul de pe randul corespunzator
 
 61 { ///ce intoarce Where()
 
@@ -363,34 +372,39 @@ randul corespunzator
 
 References MyList\< T \>.findIf().
 
-Member Data Documentation
+### Member Data Documentation
 
-int \[\] MyList\< T \>.n\[static\], \[package\]
+#### int \[\] MyList\< T \>.n\[static\], \[package\]
 
 coloanele de afisat
 
 Referenced by MyList\< T \>.parseToInts(), and MyList\< T \>.Select().
 
-The documentation for this class was generated from the following file:
+#### The documentation for this class was generated from the following file:
 
-C:/Users/radub/git/oql/OQL/src/MyList.java
+C:/Users/radub/git/oql/OQL/src/**MyList.java**
 
 File Documentation
+==================
 
 C:/Users/radub/git/oql/OQL/doc/MyList.md File Reference
+-------------------------------------------------------
 
 C:/Users/radub/git/oql/OQL/src/Main.java File Reference
+-------------------------------------------------------
 
-Classes
+### Classes
 
-class Main
+class **Main**
 
 C:/Users/radub/git/oql/OQL/src/MyList.java File Reference
+---------------------------------------------------------
 
-Classes
+### Classes
 
-class MyList\< T \>
+class **MyList\< T \>**
 
 Index
+=====
 
 INDEX
